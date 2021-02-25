@@ -87,13 +87,23 @@ xl <- c(1:length(limite))
 df <- data.frame(x=xl,y=limite)
 
 lib?ary(ggplot2)
-library(MASS)
 ggplot(df, aes(x=xl,y=limite)) + geom_point()
 
+#5
+#a)
+impressao <- c(8,11,8,12,14,13,11,14,14,15,6,10,14,19,6,12,7,5,8,8
+               ,10,16,10,12,12,8,11,6,7,12,7,10,14,5,12,7,9,12,11,9
+               ,14,8,14,8,12,10,12,22,7,15)
+dias <- c(?:50)
 
+barplot(dias,impressao,xlabel='dias',ylabel='erros')
 
+#b
+#histograma
+hist(impressao,xlabel='dias',ylabel='erros')
 
-
+#grafico de folhas
+stem(impressao)
 
 
 
