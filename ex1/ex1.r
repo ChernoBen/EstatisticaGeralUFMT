@@ -82,6 +82,30 @@ hist(limite,labels = TRUE)
 
 #barplot(estados,ylabel='frequencia',xlabel='estados')
 #b
-plot(limite)
+count <- 0
+xl <- c(1:length(limite))
+df <- data.frame(x=xl,y=limite)
+
+lib?ary(ggplot2)
+library(MASS)
+ggplot(df, aes(x=xl,y=limite)) + geom_point()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
