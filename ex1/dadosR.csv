@@ -1,0 +1,37 @@
+No,Estado Civil,Grau de Instrucao,No de filhos,Salario (X Sal. Min),Idade anos meses,Regiao de procedencia
+1,Solteiro,10 grau,-,"4,00",26 03,Interior
+2,Casado,10 grau,1,"4,56",32 10,Capital
+3,Casado,10 grau,2,"5,25",36 05,Capital
+4,Solteiro,20 graus,-,"5,73",20 10,Outro
+5,Solteiro,10 grau,-,"6,26",40 07,Outro
+6,Casado,10 grau,0,"6,66",28 00,Interior
+7,Solteiro,10 grau,-,"6,86",41 00,Interior
+8,Solteiro,10 grau,-,"7,39",43 04,Capital
+9,Casado,20 grau,1,"7,59",34 10,Capital
+10,Solteiro,20 grau,-,"7,44",23 06,Outro
+11,Casado,20 grau,2,"8,12",33 06,Interior
+12,Solteiro,10 grau,-,"8,46",27 11,Capital
+13,Solteiro,20 grau,-,"8,74",37 05,Outro
+14,Casado,10 grau,3,"8,95",44 02,Outro
+15,Casado,20 grau,0,"9,13",30 05,Interior
+16,Solteiro,20 grau,-,"9,35",38 08,Outro
+17,Casado,20 grau,1,"9,77",31 07,Capital
+18,Casado,10 grau,2,"9,80",39 07,Outro
+19,Solteiro,Superior,-,"10,53",25 08,Interior
+20,Solteiro,20 grau,-,"10,76",37 04,Interior
+21,Casado,20 grau,1,"11,06",30 09,Outro
+22,Solteiro,20 grau,-,"11,59",34 02,Capital
+23,Solteiro,10 grau,-,"12,00",41 00,Outro
+24,Casado,Superior,0,"12,79",26 01,Outro
+25,Casado,20 grau,2,"13,23",32 05,Interior
+26,Casado,20 grau,2,"13,60",35 00,Outro
+27,Solteiro,10 grau,-,"13,85",46 07,Outro
+28,Casado,20 grau,0,"14,69",29 08,Interior
+29,Casado,20 grau,5,"14,71",40 06,Interior
+30,Casado,20 grau,2,"15,99",35 10,Capital
+31,Solteiro,Superior,-,"16,22",31 05,Outro
+32,Casado,20 grau,1,"16,61",36 04,Interior
+33,Casado,Superior,3,"17,26",43 07,Capital
+34,Solteiro,Superior,-,"18,75",33 07,Capital
+35,Casado,20 grau,2,"19,40",48 11,Capital
+36,Casado,Superior,3,"23,30",42 02,Interior
