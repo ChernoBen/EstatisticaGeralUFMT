@@ -1,0 +1,41 @@
+---
+title: "intro"
+output: pdf_document
+---
+## R Markdown
+Criando dataframes:
+
+```{r}
+milsa <- read.table("milsa.txt",head= T)
+head(milsa)
+
+```
+
+## criando labels para valores da variavel qualitativa:
+
+```{r}
+milsa$civil <- factor(milsa$civil, labels = "solteiro","casado", levels=1:2)
+head(milsa)
+```
+
+##Quebrando dataframe em variaveis/tabulando
+```{r}
+attach(milsa)
+civil.tb <- table(civil)
+
+head(civil.tb)
+
+```
+
+##frequencia relativa:
+```{r}
+civil.fr <- prop.table(civil.tb)
+
+```
+
+##ploanto grafico de pizza:
+```{r}
+pie(civil.tb)
+
+```
+
