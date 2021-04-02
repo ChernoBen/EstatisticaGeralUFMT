@@ -1,8 +1,9 @@
 import math
 import numpy as np
 import pandas as pd
+from scipy.stats import norm
 #recebe um array p/ calcular desvio padrão
-class Desvio:
+class Ferramentas:
   table = pd.read_csv('ferramentas/ztable/ztable.csv')  
   status = {}
   ma = 0
@@ -60,7 +61,7 @@ class Desvio:
   def getZscore(self,valor,media,distruicao):
     return (valor-media)/distruicao
     
-  def getProbZ(self,zscore):
+  def getArea(self,zscore):
       
     zscore = float(zscore)  
     position = 2  
@@ -110,8 +111,8 @@ class Desvio:
   
   #zscore,media,prob  
   def getInvertZ(self,zscore,media,probZ):
-      x = media + (zscore*probZ)
-      return x
+      
+      return norm.ppf(zscore,media,probZ)
      
 
     
