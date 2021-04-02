@@ -54,6 +54,9 @@ class Desvio:
         self.eiy.append('0.0'+str(item)[3])
 
     self.status['eixoY'] = self.eiy
+
+  def getZscore(valor,media,distruicao):
+    return (valor-media)/distruicao
     
 
   
