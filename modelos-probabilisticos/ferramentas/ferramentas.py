@@ -51,47 +51,67 @@ class Desvio:
       if '-' in str(item):
         self.eiy.append('0.0'+str(item)[4])
       else:
-        print(item) 
+        
         self.eiy.append('0.0'+str(item)[3])
 
     self.status['eixoY'] = self.eiy
+    
     #x,u,dp
   def getZscore(self,valor,media,distruicao):
     return (valor-media)/distruicao
     
-  def getY(self,zscore):
+  def getProbZ(self,zscore):
+      
     zscore = float(zscore)  
     position = 2  
     coluna = '0.00'
-    if '-' in str(zscore):
+    
+    if '-' in str(zscore): 
+        
       zscore *= -1
+      zcolum = str(zscore)
+      
       if len(str(zscore))>3:
+          
+          zcolum = ''
           position = 3
           coluna = '0.0'+str(zscore)[position]
-      print(f'coluna negativa: {coluna}')
-      print(f'score: {zscore}')
-      print(f'tamanho de z: {len(str(zscore))}')
-      zcolum = ''
-      for i in range(2):
-          zcolum += str(zscore)[i]
           
+          for i in range(3):
+              
+              zcolum += str(zscore)[i]
+              
+   
+                
       y = self.table.loc[(self.table['Z']== float(zcolum)) & (self.table[f'{coluna}'])]
-      print(y.values)
-      #return 1 - y[coluna].values[0]
       return 1 - y[f'{coluna}'].values[0]
   
     else:
+      print(f'z-score: {zscore}')  
+      zcolum = str(zscore)
+      position = 2 
+      
       if len(str(zscore))>3:
+          
+          zcolum = ''
           position = 3  
           coluna = '0.0'+str(zscore)[position]
-      zcolum = ''
-      for i in range(2):
-          zcolum += str(zscore)[i]    
-      print(f'coluna positiva: {coluna}')
+          
+          for i in range(3):
+              
+              zcolum += str(zscore)[i]
+              
+      print(f'coluna Z: {zcolum}')        
+      print(f'coluna Y: {coluna}')
+      
       y = self.table.loc[(self.table['Z']==float(zcolum)) & (self.table[f'{coluna}'])]
       return y[f'{coluna}'].values[0]
       #return y[coluna].values[0]  
   
+  def getinvertZ(self,zscore,media,probZ):
+      x = (media + zscore)*probZ
+      return x
+     
 
     
     
