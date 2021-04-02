@@ -24,3 +24,4 @@ table = tools.table
 #y = table.where(filtro,inplace = True)
 #table[table['0.00'] and table['Z'] == 2]
 z = tools.getZscore(1,1.5,0.25)
+y = tools.getY(-1.5)

@@ -1,4 +1,5 @@
 import math
+import numpy as np
 import pandas as pd
 #recebe um array p/ calcular desvio padrão
 class Desvio:
@@ -60,14 +61,28 @@ class Desvio:
     
   def getY(self,zscore):
 
+    position = 2  
     if '-' in str(zscore):
-      coluna = '0.0'+str(zscore)[4]
-      y = self.table.loc[(self.table['Z']==zscore) & (self.table[coluna])]
-      return 1 - y[coluna].values[0]   
+      zscore *= -1
+      
+      if len(str(zscore))>3:
+          position = 3
+      coluna = '0.0'+str(zscore)[position]
+      print(f'coluna negativa: {coluna}')
+      print(f'score: {zscore}')
+      print(f'tamanho de z: {len(str(zscore))}')
+      y = self.table.loc[(self.table['Z']==zscore) & (self.table[f'{coluna}'])]
+      print(y.values)
+      #return 1 - y[coluna].values[0]
+      return 1 - y[f'{coluna}'].values[0]
     else:
-      coluna = '0.0'+str(zscore)[3]
-      y = self.table.loc[(self.table['Z']==zscore) & (self.table[coluna])]
-      return y[coluna].values[0]  
+      if len(str(zscore))>3:
+          position = 3  
+      coluna = '0.0'+str(zscore)[position]
+      print(f'coluna positiva: {coluna}')
+      y = self.table.loc[(self.table['Z']==zscore) & (self.table[f'{coluna}'])]
+      return y[f'{coluna}'].values[0]
+      #return y[coluna].values[0]  
   
 
     
