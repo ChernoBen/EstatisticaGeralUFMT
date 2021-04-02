@@ -12,9 +12,10 @@ class Ferramentas:
   total = 0
   z = []
   eiy = []
+  arr = []
 
-  def __init__(self, arr):
-    self.arr = arr
+#  def __init__(self, arr):
+    #self.arr = arr
     
 
   def Dp(self):
@@ -38,7 +39,7 @@ class Ferramentas:
     self.dp = math.sqrt(self.total)
     self.status['desvio'] = self.dp
 
-    #distribuição normal padrão
+   #distribuição normal padrão
   def Score(self):
     for item in self.arr:
       self.z.append((item - self.ma)/self.dp)
@@ -109,10 +110,10 @@ class Ferramentas:
       return y[f'{coluna}'].values[0]
       #return y[coluna].values[0]  
   
-  #zscore,media,prob  
-  def getInvertZ(self,zscore,media,probZ):
+  #area,media,prob  
+  def getInvertZ(self,area,media,probZ):
       
-      return norm.ppf(zscore,media,probZ)
+      return norm.ppf(area,media,probZ)
      
 
     
