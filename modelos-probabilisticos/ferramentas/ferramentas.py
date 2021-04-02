@@ -108,8 +108,9 @@ class Desvio:
       return y[f'{coluna}'].values[0]
       #return y[coluna].values[0]  
   
-  def getinvertZ(self,zscore,media,probZ):
-      x = (media + zscore)*probZ
+  #zscore,media,prob  
+  def getInvertZ(self,zscore,media,probZ):
+      x = media + (zscore*probZ)
       return x
      
 

@@ -18,6 +18,7 @@ test = tools.status['zcore']
 tools.Colunas()
 table = tools.table
 #x,u,dp
+'''obtendo zscore e calculando probabilidades'''
 z = tools.getZscore(1,1.5,0.25)
 y = tools.getProbZ(z)
 ex0 = tools.getZscore(24,45,12)
@@ -30,3 +31,8 @@ ex4 = tools.getProbZ(ex2)
 #ex6 = tools.getY(ex5)
 #ex7 = tools.getZscore(90-39,45,12)
 #ex8 = tools.getY(ex7)
+
+#zscore,media,prob
+'''descobrindo os valores de y usando zscore, media distribuição'''
+valorX = tools.getInvertZ(1.96,9,2)
+valorx2 = tools.getInvertZ(-0.44,9,2)
