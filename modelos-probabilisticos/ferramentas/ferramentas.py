@@ -1,8 +1,8 @@
 import math
-
+import pandas as pd
 #recebe um array p/ calcular desvio padrão
 class Desvio:
-  
+  table = pd.read_csv('ferramentas/ztable/ztable.csv')  
   status = {}
   ma = 0
   somatoria = 0
@@ -55,10 +55,19 @@ class Desvio:
 
     self.status['eixoY'] = self.eiy
 
-  def getZscore(valor,media,distruicao):
+  def getZscore(self,valor,media,distruicao):
     return (valor-media)/distruicao
     
+  def getY(self,zscore):
 
+    if '-' in str(zscore):
+      coluna = '0.0'+str(zscore)[4]
+      y = self.table.loc[(self.table['Z']==zscore) & (self.table[coluna])]
+      return 1 - y[coluna].values[0]   
+    else:
+      coluna = '0.0'+str(zscore)[3]
+      y = self.table.loc[(self.table['Z']==zscore) & (self.table[coluna])]
+      return y[coluna].values[0]  
   
 
     
