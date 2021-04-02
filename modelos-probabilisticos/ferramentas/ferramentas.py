@@ -62,9 +62,9 @@ class Desvio:
   def getY(self,zscore):
     zscore = float(zscore)  
     position = 2  
+    coluna = '0.00'
     if '-' in str(zscore):
       zscore *= -1
-      coluna = '0.00'
       if len(str(zscore))>3:
           position = 3
           coluna = '0.0'+str(zscore)[position]
