@@ -17,11 +17,12 @@ for chave,valor in tools.status.items():
   
 tools.Colunas()
 table = tools.table
-#y = table.loc[(table['Z']==2) & (table['0.00'])]
-
-#print(y['0.00'].values[0])  
-# filtering data on basis of both filters
-#y = table.where(filtro,inplace = True)
-#table[table['0.00'] and table['Z'] == 2]
+#x,u,dp
 z = tools.getZscore(1,1.5,0.25)
-y = tools.getY(2.0)
+y = tools.getY(z)
+ex0 = tools.getZscore(24,45,12)
+ex1 = tools.getZscore(54,45,12)
+ex2 = tools.getY(ex0)
+ex3 = tools.getY(ex1)
+
+#mais que 39
