@@ -60,14 +60,14 @@ class Desvio:
     return (valor-media)/distruicao
     
   def getY(self,zscore):
-
+    zscore = float(zscore)  
     position = 2  
     if '-' in str(zscore):
       zscore *= -1
-      
+      coluna = '0.00'
       if len(str(zscore))>3:
           position = 3
-      coluna = '0.0'+str(zscore)[position]
+          coluna = '0.0'+str(zscore)[position]
       print(f'coluna negativa: {coluna}')
       print(f'score: {zscore}')
       print(f'tamanho de z: {len(str(zscore))}')
@@ -78,7 +78,7 @@ class Desvio:
     else:
       if len(str(zscore))>3:
           position = 3  
-      coluna = '0.0'+str(zscore)[position]
+          coluna = '0.0'+str(zscore)[position]
       print(f'coluna positiva: {coluna}')
       y = self.table.loc[(self.table['Z']==zscore) & (self.table[f'{coluna}'])]
       return y[f'{coluna}'].values[0]
