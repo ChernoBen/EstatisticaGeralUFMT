@@ -18,16 +18,21 @@ class Ferramentas:
     #self.arr = arr
     
 
-  def Dp(self):
+  def Dp(self,arr,media):
     #obter a somatoria
-    for item in self.arr:
-      self.somatoria += item
-
-    #obter a media aritimética
-    self.ma = self.somatoria / len(self.arr)
+    self.arr = arr
+    if media == 0 :
+      for item in self.arr:
+        self.somatoria += item
+      #obter a media aritimética
+      self.ma = self.somatoria / len(self.arr)
+      self.status['somatoria'] = self.somatoria
+      
+    else:
+      self.ma = media  
+    
     self.status['media'] = self.ma
-    self.status['somatoria'] = self.somatoria
-
+    
     #subtrair itens - media Arit elevado ao quadrado
     for item in self.arr:
       self.total += math.pow((item - self.ma), 2)
@@ -38,8 +43,9 @@ class Ferramentas:
     #obter a raiz para obter desvio padrão
     self.dp = math.sqrt(self.total)
     self.status['desvio'] = self.dp
+    return self.dp
 
-   #distribuição normal padrão
+  #distribuição normal padrão
   def Score(self):
     for item in self.arr:
       self.z.append((item - self.ma)/self.dp)
@@ -47,6 +53,8 @@ class Ferramentas:
     self.status['zcore'] = self.z  
     #falta obter dados da tabela pnorm
     #z = (x-u)/o
+    return self.z
+
 
   def Colunas(self):
     for item in self.z:

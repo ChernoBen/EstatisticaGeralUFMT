@@ -31,3 +31,23 @@ ex4 = tools.getArea(ex2)
 '''descobrindo os valores de x usando zscore, media distribuição:'''
 quest = tools.getInvertZ(0.01,181.37,37.6)
 q3 = norm.ppf(.01,181,37.6)
+
+#obter desvio padrão
+''' se na tiver uma media pré definidar passar 0 como parametro'''
+desvio = tools.Dp([550,600,650,700,750,800],0)
+#obtendo media
+media = tools.ma
+#zscore
+z = tools.Score()
+arr = []
+somatoria = 0
+for item in z:
+    arr.append(tools.getArea(item))
+    
+for item in arr:
+    print(f'Area acumulada: {item * 100}%')
+
+test = tools.getArea(-1.50)
+test2 = tools.getArea(1.25)
+test3 = test2 - test
+ 
