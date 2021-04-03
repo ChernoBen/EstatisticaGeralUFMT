@@ -122,6 +122,13 @@ class Ferramentas:
   def getInvertZ(self,area,media,probZ):
       
       return norm.ppf(area,media,probZ)
+  
+  def getX(self,z,media,distruicao):
+      
+      x = media + (z * 2)
+      return x
+  
+    
      
 
     
