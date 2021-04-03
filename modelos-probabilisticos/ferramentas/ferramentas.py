@@ -97,7 +97,7 @@ class Ferramentas:
       return 1 - y[f'{coluna}'].values[0]
   
     else:
-      print(f'z-score: {zscore}')  
+      #print(f'z-score: {zscore}')  
       zcolum = str(zscore)
       position = 2 
       
@@ -111,8 +111,8 @@ class Ferramentas:
               
               zcolum += str(zscore)[i]
               
-      print(f'coluna Z: {zcolum}')        
-      print(f'coluna Y: {coluna}')
+      #print(f'coluna Z: {zcolum}')        
+      #print(f'coluna Y: {coluna}')
       
       y = self.table.loc[(self.table['Z']==float(zcolum)) & (self.table[f'{coluna}'])]
       return y[f'{coluna}'].values[0]
